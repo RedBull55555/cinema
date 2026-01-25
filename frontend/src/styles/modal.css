@@ -1,0 +1,33 @@
+/* Minimal modal styling that blends with existing UI */
+.app-modal__backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.app-modal__dialog{
+  width: min(560px, calc(100vw - 24px));
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.app-modal__header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.app-modal__title{ font-weight: 700; }
+.app-modal__close{
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.app-modal__content{ padding: 16px; }
