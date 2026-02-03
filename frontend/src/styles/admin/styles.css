@@ -583,3 +583,130 @@ textarea.conf-step__input {
   font-weight: 600;
 }
 /*# sourceMappingURL=styles.css.map */
+
+
+/* --- Custom admin UI --- */
+.admin-header { padding-bottom: 12px; }
+.admin-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+.admin-nav__link {
+  text-decoration: none;
+  color: #111;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(0,0,0,.06);
+}
+.admin-nav__link.active { background: rgba(0,0,0,.12); font-weight: 700; }
+.admin-nav__logout {
+  margin-left: auto;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: white;
+  cursor: pointer;
+}
+.admin-content { padding-top: 16px; }
+
+.admin-panel { padding: 0 1rem; }
+.admin-panel__head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 6px 0 14px;
+}
+.admin-panel__tools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.admin-panel__title { margin: 0; font-size: 22px; }
+.admin-error { color: crimson; margin: 8px 0; }
+
+.admin-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.admin-card { padding: 12px; border-radius: 10px; background: rgba(0,0,0,.06); }
+.admin-card__num { font-size: 28px; font-weight: 800; }
+.admin-card__label { opacity: .8; margin-top: 2px; }
+.admin-card__link { display: inline-block; margin-top: 8px; text-decoration: none; font-weight: 700; }
+.admin-card__hint { display: inline-block; margin-top: 8px; opacity: .75; }
+
+.admin-table__wrap { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th, .admin-table td { padding: 10px; border-bottom: 1px solid rgba(0,0,0,.12); text-align: left; vertical-align: top; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.admin-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-btn--link { }
+.admin-primary {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-form { display: grid; gap: 10px; }
+.admin-form__row { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.admin-field span { display: block; margin-bottom: 4px; opacity: .8; }
+.admin-field input, .admin-field textarea, .admin-field select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.25);
+}
+.admin-check { display: flex; gap: 8px; align-items: center; }
+.admin-form__actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 4px; }
+
+.admin-inline { display:flex; gap:8px; align-items:center; }
+.admin-inline span { opacity: .8; }
+
+.admin-toolbar { display:flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 10px 0 12px; }
+.admin-toolbar__group { display:flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.admin-toolbar__label { font-weight: 700; }
+.admin-toolbar__hint { opacity: .8; }
+
+.admin-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: white;
+  cursor: pointer;
+}
+.admin-chip.active { background: rgba(0,0,0,.12); font-weight: 800; }
+
+.admin-seatgrid { user-select: none; }
+.admin-seatgrid__row { display:flex; gap: 6px; align-items:center; margin-bottom: 6px; }
+.admin-seatgrid__rownum {
+  width: 28px;
+  text-align: right;
+  padding-right: 6px;
+  opacity: .75;
+  font-size: 12px;
+}
+.admin-seatgrid__colnums { display:flex; gap: 6px; align-items:center; margin-top: 8px; opacity: .75; font-size: 12px; }
+.admin-seatgrid__colnums span { width: 28px; text-align: center; }
+.admin-seatgrid__colnums span:first-child { width: 28px; }
+
+.admin-seat {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.2);
+  background: rgba(0,0,0,.06);
+  cursor: pointer;
+}
+.admin-seat--vip { background: rgba(255, 215, 120, .8); }
+.admin-seat--disabled { background: rgba(0,0,0,.18); }

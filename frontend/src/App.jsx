@@ -6,7 +6,13 @@ import HallPage from './pages/client/HallPage.jsx'
 import TicketPage from './pages/client/TicketPage.jsx'
 
 import AdminLoginPage from './pages/admin/AdminLoginPage.jsx'
-import AdminDashboardPage from './pages/admin/AdminDashboardPage.jsx'
+import RequireAdmin from './pages/admin/RequireAdmin.jsx'
+import AdminLayout from './pages/admin/AdminLayout.jsx'
+import AdminHomePage from './pages/admin/AdminHomePage.jsx'
+import AdminHallsPage from './pages/admin/AdminHallsPage.jsx'
+import AdminHallEditorPage from './pages/admin/AdminHallEditorPage.jsx'
+import AdminMoviesPage from './pages/admin/AdminMoviesPage.jsx'
+import AdminSessionsPage from './pages/admin/AdminSessionsPage.jsx'
 
 export default function App() {
   return (
@@ -18,7 +24,21 @@ export default function App() {
 
       {/* Admin */}
       <Route path="/admin/login" element={<AdminLoginPage />} />
-      <Route path="/admin" element={<AdminDashboardPage />} />
+
+      <Route
+        path="/admin"
+        element={
+          <RequireAdmin>
+            <AdminLayout />
+          </RequireAdmin>
+        }
+      >
+        <Route index element={<AdminHomePage />} />
+        <Route path="halls" element={<AdminHallsPage />} />
+        <Route path="halls/:id/editor" element={<AdminHallEditorPage />} />
+        <Route path="movies" element={<AdminMoviesPage />} />
+        <Route path="sessions" element={<AdminSessionsPage />} />
+      </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
